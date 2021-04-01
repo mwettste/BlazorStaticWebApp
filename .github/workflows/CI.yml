@@ -19,7 +19,6 @@ jobs:
         with:
           dotnet-version: '5.0.x'
       - name: Install Dependencies
-        run: dotnet restore
-        working-directory: ./
+        run: dotnet restore blazor-basic-swa.sln
       - name: Build
-        run: dotnet build ./blazor-basic-swa.sln --configuration Release --no-restore
+        run: dotnet build blazor-basic-swa.sln --configuration Release --no-restore
