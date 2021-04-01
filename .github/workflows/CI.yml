@@ -14,13 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-        with:
-          submodules: true
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1.7.2
         with:
           dotnet-version: '5.0.x'
       - name: Install Dependencies
         run: dotnet restore
+        working-directory: ./
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./blazor-basic-swa.sln --configuration Release --no-restore
